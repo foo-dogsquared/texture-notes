@@ -1,0 +1,71 @@
+= Basic usage
+
+There's a simple LaTeX notes manager script stored in link:scripts[`scripts/` directory]
+intended only for this directory. It is a CLI program that lets you add, remove, open, and
+compile notes easily. You're free to use and modify it for any other purposes.
+
+Also, it is the recommended way of doing things around here since it automates the
+workflow process.
+
+== Examples
+
+To add a subject to the `notes/` directory:
+
+[source, shell]
+----
+python compile.py add --subject "<SUBJECT_NAME>"
+----
+
+You can also add multiple subjects at once:
+
+[source, shell]
+----
+python compile.py add --subject "<SUBJECT_NAME_1>" "<SUBJECT_NAME_2>" ... "<SUBJECT_NAME_n>"
+----
+
+To add a note under a subject:
+
+[source, shell]
+----
+python compile.py add --note "<SUBJECT_NAME>" "<NOTE_TITLE>"
+----
+
+Like adding subjects, you can also add multiple notes at once:
+
+[source, shell]
+----
+python compile.py add --note "<SUBJECT_NAME>" "<NOTE_TITLE_1>" "<NOTE_TITLE_2>" ... "<NOTE_TITLE_n>"
+----
+
+Even better, you can add notes under multiple subjects in one command:
+
+[source, shell]
+----
+python compile.py add --note "<SUBJECT_NAME_1>" "<NOTE_TITLE_1.1>" "<NOTE_TITLE_1.2>" ... "<NOTE_TITLE_1.n>" --note "<SUBJECT_NAME_2>" "<NOTE_TITLE_2.1>" "<NOTE_TITLE_2.2>" ... "<NOTE_TITLE_2.n>"
+----
+
+OR MUCH EVEN BETTER, you can add notes and subjects at the same time:
+
+[source, shell]
+----
+python compile.py add --subject "<SUBJECT_NAME_THAT_DOESNT_EXIST>" --note "<SUBJECT_NAME_THAT_DOESNT_EXIST>" "<NOTE_TITLE_1>" "<NOTE_TITLE_2>" ... "<NOTE_TITLE_n>"
+----
+
+The commands syntax for removing and compiling is pretty much the same except
+they have the following additional arguments under the note (`--note`) option:
+
+* `:all:`
+-- Refers to all of the individual notes (except the main note) under the
+subject.
+
+Nonetheless, you can still view the help section for more details.
+
+== Footnote
+There is a particular precedence with operations regarding both subjects and notes where subjects will always be the first to be processed then the notes will be processed later.
+
+Which is why the following command still works:
+
+[source,shell]
+----
+python manager.py add --note "Calculus" "Precalculus Review" "Introduction to Functions and Limits" "Differential Equations" --subject "Calculus"
+----

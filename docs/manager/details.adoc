@@ -1,0 +1,51 @@
+= Details, details...
+
+Here's a list of programs you should have installed on your machine if you want to
+use this:
+
+* https://inkscape.org/[Inkscape]
+** Recommend to always use latest version.
+
+* https://python.org/[Python]
+** Specifically Python 3.6 and above.
+
+* a https://latex-project.org/[LaTeX] distribution
+** Personally recommend installing https://tug.org/texlive/[TeX Live] since
+I find it easy to install across various platforms especially with
+https://tug.org/texlive/acquire-iso.html[an ISO image] making it handy
+for environments which are offline and/or has slow internet connection.
+** Make sure you have https://www.ctan.org/pkg/latexmk/[`latexmk`] installed
+and can be executed within the shell (which should be built-in with modern
+LaTeX distributions).
+
+* a text editor
+** Obviously. Just for reference, I use https://www.vim.org/[Vim] with
+https://github.com/lervag/vimtex[Vimtex] and
+https://github.com/SirVer/ultisnips[UltiSnips] inspired by
+https://castel.dev/post/lecture-notes-1/[this post by _Gilles Castel_].
+
+Also worth noting that the full feature set of this program will not work
+on a Windows machine since there are some additional requirements that is
+mostly available only on Linux systems. The graphics manager is one
+example of this:
+
+* https://github.com/gillescastel/inkscape-figures/[Inkscape Figures]
+** You also need to install the dependencies of this package
+https://wiki.archlinux.org/index.php/Rofi[Rofi].
+
+Inside of this repo is your typical stuff like:
+
+* The `docs/` folder where I documented the applications and stuff.
+
+* The `scripts/` folder where the notes manager source code is stored.
+
+* The `manager.py` where it serves as the front file for the notes manager program. 
+You could create a shadow executable file on the `manager.py` to shorten the command. 
+
+* Over time, there is also `personal-lecture-manager.log` file
+in the root directory where it list the happenings of the most recent
+run of the notes manager program. Could be handy for debugging and
+error handling.
+
+* The `texture-notes-profile` where the notes and styles are stored. 
+It's also meant to be portable, easily transferring it between Linux-based systems. 

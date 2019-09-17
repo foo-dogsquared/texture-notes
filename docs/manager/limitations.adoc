@@ -1,0 +1,37 @@
+= Limitations
+
+Here are some of the limitations of the note manager from its data
+architecture and their restrictions.
+
+* You can't assign nested subjects under another subject. This is designed
+to be like a binder with dividers. If you feel the need for organization with
+nested categories, this is not the notes manager for you.
+
+** Alternatives include https://tiddlywiki.com/[TiddlyWiki] and
+https://zim-wiki.org/[Zim].
+
+* Subjects have the following restrictions:
+
+** Subject name should only contain alphanumeric characters, dashes (`-`),
+and whitespaces. This is equivalent to the regex (`^[a-zA-Z0-9 -]+$`)
+
+** Subject name can contain up to 128 characters.
+
+** Subject can't be named `:all:` and any of their transformation
+equivalent (i.e. `:ALL:`, `:AlL`, etc.).
+
+* Subject notes have the following restrictions:
+
+** Note title has no character restriction. You can entitle it however
+you want and throw a few emojis in there.
+
+** Note title can contain up to 256 characters.
+
+** Note title can't be named `:all:`, `stylesheets`, `graphics` and any
+of their transformation equivalent (i.e. `:ALL:`, `:All:`, `:STYLESHEETS:`, etc.).
+
+* Subject graphics doesn't have much restrictions (aside from the practical
+limitations) since they're not being tracked by the notes manager.
+
+** Though, you have to make sure to link them correctly or there'll be an
+error when compilation process has started.

@@ -1,0 +1,61 @@
+= a-remote-repo-full-of-notes-of-things-i-did-not-know-about
+
+...also known as foo-dogsquared's `personal-lectures`
+
+A repo containing a collection of my study notes about various stuff whether
+be programming, mathematics, electronics, engineering, and anything that is
+worth detailing over.
+
+Think of this repo as an open-sourced online
+http://calnewport.com/blog/2015/11/25/the-feynman-notebook-method/[Feynman notebook] 
+of someone... or something.
+
+This open study notebook uses LaTeX as the files to be used for my notes so you'll have to install a LaTeX distribution to be able to compile it and view the results. 
+I might consider using a CI server to automate that (perhaps) for my (and everyone else's) convenience.
+
+include::docs/manager/details.adoc[leveloffset=1]
+
+include::docs/manager/limitations.adoc[leveloffset=1]
+
+include::docs/manager/folder-structure.adoc[leveloffset=1]
+
+== Some other things
+
+I'll link you to http://freebies-hunt.netlify.com/[Freebies Hunt]. It's a website 
+that is full of free and open content that ranges from books, software, courses, 
+and so much more. It's also where I list most of my resources use to study since 
+I try to study deeply as much as possible with only free resources (though, admittedly 
+it doesn't really bear useful results; just go and start right away with any kind).
+
+Speaking of resource list, here's one of the most (if not, the most)
+https://github.com/sindresorhus/awesome[awesome] resource list. It's a resource list... 
+of resource list. "RESOURCE LIST"-CEPTION!
+
+== Frequently Asked Questions (FAQ)
+
+=== What?
+
+Yeah... I have that in mind too...
+
+=== How?
+
+I take notes... but seriously, most of these notes came from my offline notebook, also known as paper notebook. 
+Although, some of them are re-edited just to go for another attempt at explaining it.
+
+=== Why?
+
+For open knowledge, only without the guarantee of precision and
+accuracy... 🙃 And to practice this kind of
+writing-everything-that-you've-learned-down-in-a-notebook-on-a-reformatted-way
+practice.
+
+=== How to contribute?
+
+It's a collection of my notes about anything
+and it is mostly intended for personal use. So...
+
+If you want to correct me on things, just shoot me an email or create a
+new issue on the issue tracker. 😁
+
+If you want, feel free to improve it (esp. the CLI program). It's here so why 
+not go for it, too.

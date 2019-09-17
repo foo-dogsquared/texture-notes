@@ -1,0 +1,7 @@
+= Notes manager
+
+include::manager/details.adoc[leveloffset=+1]
+
+include::manager/usage.adoc[leveloffset=+1]
+
+include::manager/limitations.adoc[leveloffset=+1]

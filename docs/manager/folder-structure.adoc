@@ -1,0 +1,40 @@
+= Folder structure
+
+Here are the top level files and directories of the profile you give the most amount of attention:
+
+== `latexmkrc` 
+
+The root `latexmkrc` to be used for the notes directory. 
+This is used for setting configurations to https://www.ctan.org/pkg/latexmk/[latexmk]. 
+
+You can edit it but make sure that the styles folder is added in the search path. 
+
+
+== `notes/`
+Where the notes is stored, obviously. Inside of this directory are subdirectories of 
+subjects in https://en.wikipedia.org/wiki/Letter_case#Special_case_styles[kebab case]
+and a https://www.sqlite.org/[SQLite] database named `notes.db` where it contains
+the data for the subjects and notes that are formally added into the binder.
+
+Within those subdirectories are where the LaTeX notes are stored. In any case, 
+think of the `notes/` directory as a 
+http://theoldenchapters.com/organized-college-binder/[college binder notebook]. In fact, 
+any subsequent reference to this directory shall be referred to as the *binder*.
+
+Each subdirectory should have also have the following:
+
+- A directory named `graphics/` where all of the images to be used 
+within the files are stored. 
+- A symbolic link from the root `latexmkrc`. 
+
+You can compile the subject notes individually (provided that your LaTeX files are
+configured correctly).
+
+== `styles/`
+Where my custom LaTeX style (`.sty`) and class (`.cls`) are stored. 
+Also, it may be referred to as the *stylesheets directory*. 
+
+The documents should be able to compile correctly (even manually) with https://mg.readthedocs.io/latexmk.html[latex-mk] since it uses a `latexmkrc` file to add the styles folder into the package search path. 
+
+You can take a look at some of my LaTeX style files to see a template/pattern in case
+you want to add your own. 
