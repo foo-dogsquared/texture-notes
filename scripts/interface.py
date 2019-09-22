@@ -112,7 +112,7 @@ def remove_note(note_metalist=None, subject_metalist=None, delete=False, **kwarg
         subject_set = reduce(lambda _set, subject_list: _set | set(subject_list), subject_metalist, set())
 
         if ":all:" in subject_set:
-            remove_all_subjects(delete, db=db, metadata=metadata)
+            remove_all_subjects(delete, metadata=metadata)
             print_to_console_and_log("All subjects (and its notes) have been removed in the binder.")
             return
 
@@ -134,7 +134,7 @@ def remove_note(note_metalist=None, subject_metalist=None, delete=False, **kwarg
 
             if ":all:" in notes:
                 try:
-                    remove_all_subject_notes(subject, delete, db=db, metadata=metadata)
+                    remove_all_subject_notes(subject, delete, metadata=metadata)
                     print_to_console_and_log(f"All notes under '{subject}' have been removed from the binder.")
                 except exceptions.NoSubjectFoundError:
                     print_to_console_and_log(f"Subject '{subject}' is not found in the database. Moving on...",
@@ -145,7 +145,7 @@ def remove_note(note_metalist=None, subject_metalist=None, delete=False, **kwarg
             else:
                 for note in notes:
                     try:
-                        remove_subject_note(subject, note, delete_on_disk=delete, db=db)
+                        remove_subject_note(subject, note, delete_on_disk=delete, metadata=metadata)
                         print_to_console_and_log(f"Note '{note}' under subject '{subject}' has been removed from the"
                                                  f"binder.")
                     except exceptions.NoSubjectFoundError:

@@ -616,8 +616,9 @@ def create_subject_note(subject, note_title, force=False, metadata=None):
                 for config_key, config_value in constants.DEFAULT_LATEX_DOC_CONFIG.items():
                     custom_config[f"__{config_key}__"] = config_value
 
+                latex_subfile_source_template = Template(constants.config["DEFAULT_LATEX_SUBFILE_SOURCE_CODE"])
                 note_file.write(
-                    constants.config["DEFAULT_LATEX_SUBFILE_TEMPLATE"].safe_substitute(__date__=today.strftime("%B %d, %Y"),
+                    latex_subfile_source_template.safe_substitute(__date__=today.strftime("%B %d, %Y"),
                                                                              __title__=note_title,
                                                                              **custom_config)
                 )
@@ -781,7 +782,7 @@ def remove_subject_note(subject, note, delete_on_disk=False, metadata=None):
     except exceptions.Error as error:
         raise error
 
-    with use_db(db) as (notes_cursor, notes_db):
+    with use_db(metadata["db"]) as (notes_cursor, notes_db):
         notes_cursor.execute("DELETE FROM notes WHERE id == :note_id;", {"note_id": note_query["id"]})
 
         if delete_on_disk is True:
